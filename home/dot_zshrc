@@ -1,3 +1,23 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+
+#
+# Completion & Autosuggestions
+#
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  autoload -Uz compinit && compinit
+fi
+
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace)
+
 #
 # Alias
 #
@@ -52,3 +72,6 @@ export PATH="$PATH:/Users/koke2y/.lmstudio/bin"
 # End of LM Studio CLI section
 
 alias claude-mem='bun "/Users/koke2y/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs"'
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

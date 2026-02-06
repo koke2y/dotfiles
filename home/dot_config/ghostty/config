@@ -1,7 +1,7 @@
 # Prerelease builds
 auto-update-channel = tip
 
-theme = tokyonight
+theme = solarized_osaka_dark
 font-family = PlemolJP35 Console NF
 font-thicken = true
 

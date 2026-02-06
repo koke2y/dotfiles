@@ -282,7 +282,7 @@ web_client {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-// theme "dracula"
+theme "solarized_osaka_dark"
  
 // Choose the base input mode of zellij.
 // Default: normal
@@ -504,6 +504,22 @@ web_client {
 // Default: true
 // 
 show_startup_tips false
+
+themes {
+    solarized_osaka_dark {
+        fg "#839395"
+        bg "#002c38"
+        black "#001419"
+        red "#db302d"
+        green "#849900"
+        yellow "#b28500"
+        blue "#268bd3"
+        magenta "#d23681"
+        cyan "#29a298"
+        white "#9eabac"
+        orange "#c94c16"
+    }
+}
  
 // Whether to show release notes on first version run
 // Default: true

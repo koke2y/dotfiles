@@ -1,0 +1,3 @@
+gui:
+  returnImmediately: false
+  wrapMainPanel: true

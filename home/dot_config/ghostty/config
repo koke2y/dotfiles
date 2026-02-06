@@ -1,0 +1,54 @@
+# Prerelease builds
+auto-update-channel = tip
+
+theme = TokyoNight
+font-family = PlemolJP35 Console NF
+font-thicken = true
+
+window-padding-x = 20
+window-padding-y = 5
+window-padding-balance = true
+window-theme = ghostty
+
+# 背景
+# 背景の透過度（0.0 〜 1.0）
+background-opacity = 0.85
+# 背景のぼかし（macOS のみ）
+background-blur-radius = 20
+# 非アクティブなスプリットの透過度
+unfocused-split-opacity = 0.7
+
+macos-titlebar-style = transparent
+macos-window-buttons = hidden
+
+resize-overlay = never
+
+quick-terminal-position = right
+quick-terminal-screen = main
+quick-terminal-animation-duration = 0.3
+keybind = global:cmd+shift+t=toggle_quick_terminal
+
+macos-option-as-alt = true
+
+# 行間を広げる
+adjust-cell-height = 2
+
+bell-features = title,attention
+
+# 起動時のデフォルトディレクトリ
+working-directory = /Users/koke2y/Desktop/workspaces
+# 新しいタブ/ウィンドウは現在のディレクトリを引き継ぐ
+window-inherit-working-directory = true
+
+# クリップボード
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+
+
+# Shift+Enterで改行しようとすると、[27;5;13~と表示されてしまう問題の解決
+keybind = shift+enter=text:\n
+# alt + 矢印キーが機能しないので
+keybind = alt+left=text:\x1b[1;3D
+keybind = alt+right=text:\x1b[1;3C
+keybind = alt+up=text:\x1b[1;3A
+keybind = alt+down=text:\x1b[1;3B

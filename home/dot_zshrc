@@ -1,0 +1,54 @@
+#
+# Alias
+#
+alias g='git'
+alias forfind='for d in `find ./ -type d`; do echo $d,`ls "$d" | wc -l`; done'
+dirtouch() {
+    mkdir -p "$(dirname $1)"
+    touch "$1"
+}
+alias touch=dirtouch
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias notify='say -v Samantha "Done"'
+alias dcp="docker-compose"
+
+export EDITOR=vim
+eval "$(direnv hook zsh)"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/shims:$PATH"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+. "$HOME/.local/bin/env"
+export PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/Applications/platform-tools:$PATH"
+
+[ -f "/Users/koke2y/.ghcup/env" ] && . "/Users/koke2y/.ghcup/env" # ghcup-env
+# bun completions
+[ -s "/Users/koke2y/.bun/_bun" ] && source "/Users/koke2y/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# alias claude="/Users/koke2y/.claude/local/claude"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/koke2y/.lmstudio/bin"
+# End of LM Studio CLI section
+
+alias claude-mem='bun "/Users/koke2y/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs"'

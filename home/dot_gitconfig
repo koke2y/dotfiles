@@ -120,10 +120,15 @@
 [user]
 	name = koke2y
 	email = koke2y@koke2y.com
+	signingkey = 7DD099BC5F6C3195
 [pull]
   rebase = true
 [push]
   default = simple
+[commit]
+	gpgsign = true
+[gpg]
+	program = /opt/homebrew/bin/gpg
 [filter "media"]
   required = true
   clean = git media clean %f
@@ -150,3 +155,5 @@
   root = ~/Repositories
 [init]
   defaultBranch = main
+[tag]
+	gpgSign = true

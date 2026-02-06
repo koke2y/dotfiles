@@ -11,6 +11,7 @@ brew "git-secrets"
 brew "jq"
 brew "prek"
 brew "tree"
+brew "zellij"
 brew "watch"
 brew "wget"
 

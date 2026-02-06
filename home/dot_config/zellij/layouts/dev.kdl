@@ -1,0 +1,24 @@
+layout {
+    pane size=1 borderless=true {
+        plugin location="tab-bar"
+    }
+    pane split_direction="vertical" {
+        // 左側 (20%)
+        pane size="20%" split_direction="horizontal" {
+            pane name="FILETREE" {
+                command "ft"
+            }
+            pane name="KEIFU" {
+                command "keifu"
+            }
+        }
+        // 右側 (65%)
+        pane size="65%" split_direction="horizontal" {
+            pane size="70%" name="CLAUDE"
+            pane size="30%" name="TERMINAL"
+        }
+    }
+    pane size=2 borderless=true {
+        plugin location="status-bar"
+    }
+}

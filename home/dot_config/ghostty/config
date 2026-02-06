@@ -1,7 +1,7 @@
 # Prerelease builds
 auto-update-channel = tip
 
-theme = TokyoNight
+theme = tokyonight
 font-family = PlemolJP35 Console NF
 font-thicken = true
 
@@ -44,6 +44,11 @@ window-inherit-working-directory = true
 clipboard-write = allow
 clipboard-trim-trailing-spaces = true
 
+
+# タブを無効化（zellijで管理する）
+keybind = super+t=unbind
+keybind = super+shift+]=unbind
+keybind = super+shift+[=unbind
 
 # Shift+Enterで改行しようとすると、[27;5;13~と表示されてしまう問題の解決
 keybind = shift+enter=text:\n

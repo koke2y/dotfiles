@@ -34,7 +34,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 alias notify='say -v Samantha "Done"'
-alias dcp="docker-compose"
+alias dcp="docker compose"
 
 export EDITOR=vim
 eval "$(direnv hook zsh)"

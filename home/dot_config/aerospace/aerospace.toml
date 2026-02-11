@@ -24,7 +24,7 @@ default-root-container-orientation = 'auto'
 
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
-automatically-unhide-macos-hidden-apps = false
+automatically-unhide-macos-hidden-apps = true
 
 # Monitor assignment
 [workspace-to-monitor-force-assignment]
@@ -72,8 +72,8 @@ alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
 # Resize
-alt-minus = 'resize smart -50'
-alt-shift-minus = 'resize smart +50'
+alt-shift-minus = 'resize smart -50'
+alt-shift-equal = 'resize smart +50'
 
 # Switch workspace by number
 alt-1 = 'workspace 1'
@@ -109,14 +109,14 @@ alt-shift-o = 'move-node-to-workspace O'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # Enter service mode
-alt-shift-semicolon = 'mode service'
+alt-shift-space = ['exec-and-forget sketchybar --trigger aerospace_mode_change MODE=service', 'mode service']
 
 # Service mode key bindings
 [mode.service.binding]
-esc = ['reload-config', 'mode main']
-r = ['flatten-workspace-tree', 'mode main']
-f = ['layout floating tiling', 'mode main']
-backspace = ['close-all-windows-but-current', 'mode main']
+esc = ['exec-and-forget sketchybar --trigger aerospace_mode_change MODE=main', 'reload-config', 'mode main']
+r = ['exec-and-forget sketchybar --trigger aerospace_mode_change MODE=main', 'flatten-workspace-tree', 'layout tiles horizontal vertical', 'balance-sizes', 'mode main']
+f = ['exec-and-forget sketchybar --trigger aerospace_mode_change MODE=main', 'layout floating tiling', 'mode main']
+backspace = ['exec-and-forget sketchybar --trigger aerospace_mode_change MODE=main', 'close-all-windows-but-current', 'mode main']
 
 # Auto-assign apps to workspaces
 [[on-window-detected]]
@@ -126,3 +126,7 @@ run = 'move-node-to-workspace S'
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace O'
+
+[[on-window-detected]]
+if.app-id = 'com.philandro.anydesk'
+run = ['layout floating', 'move-node-to-workspace Z']

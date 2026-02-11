@@ -176,6 +176,8 @@ for _, names in pairs(display_spaces) do
 	})
 end
 
+sbar.add("event", "aerospace_mode_change")
+
 local space_window_observer = sbar.add("item", {
 	drawing = false,
 	updates = true,
